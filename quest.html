@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Questionário</title>
+        <link rel="stylesheet" href="styles.css">
+
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    </head>
+    <body>
+        <h1>Questionário de Necessidades</h1>
+        <form id="meuFormulario">
+
+            <div class="identify">
+                <label class="email">Identificação</label>
+                <div class="options">
+                    <button id="login" type="submit">Login</button>
+                </div>
+            </div>
+
+            <h2>O questionário a seguir deve ser preenchido de forma que sejam marcadas quantas vezes na semana você realiza alguma das ações</h2>
+
+            <div class="question">
+                <label class="question-label">Dormir 8 horas.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question1" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question1" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question1" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question1" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question1" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question1" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question1" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label class="question-label">Beber 2l/dia de água.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question2" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question2" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question2" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question2" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question2" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question2" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question2" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label class="question-label">Tomar banho para higiene pessoal.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question3" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question3" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question3" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question3" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question3" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question3" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question3" value="7"> 7</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <label class="question-label">Comer refeições balanceadas regularmente.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question4" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question4" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question4" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question4" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question4" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question4" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question4" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label class="question-label">Praticar atividades físicas.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question5" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question5" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question5" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question5" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question5" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question5" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question5" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Evitar áreas perigosas ou com alta criminalidade.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question6" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question6" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question6" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question6" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question6" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question6" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question6" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Ter um emprego estável para garantir renda.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question7" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question7" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question7" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question7" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question7" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question7" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question7" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Manter um fundo de emergência para imprevistos.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question8" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question8" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question8" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question8" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question8" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question8" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question8" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Fazer check-ups médicos regulares.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question9" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question9" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question9" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question9" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question9" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question9" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question9" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Visitar a família regularmente.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question10" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question10" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question10" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question10" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question10" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question10" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question10" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Participar de reuniões com amigos.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question11" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question11" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question11" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question11" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question11" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question11" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question11" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Fazer parte de grupos de interesse, como clubes de leitura, esportes, etc.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question12" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question12" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question12" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question12" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question12" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question12" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question12" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Trocar mensagens com amigos em redes sociais.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question13" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question13" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question13" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question13" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question13" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question13" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question13" value="7"> 7</label>
+                </div>
+            </div>
+
+            <div class="question"></div>
+                <label class="question-label">Passar tempo de qualidade com um parceiro(a).</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question14" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question14" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question14" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question14" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question14" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question14" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question14" value="7"> 7</label>
+                </div>
+            </div>
+            
+            <div class="question"></div>
+                <label class="question-label">Celebrar datas especiais, como aniversários.</label>
+                <div class="options">
+                    <label  class="radio-option"><input type="radio" name="question15" value="1"> 1</label>
+                    <label  class="radio-option"><input type="radio" name="question15" value="2"> 2</label>
+                    <label  class="radio-option"><input type="radio" name="question15" value="3"> 3</label>
+                    <label  class="radio-option"><input type="radio" name="question15" value="4"> 4</label>
+                    <label  class="radio-option"><input type="radio" name="question15" value="5"> 5</label>
+                    <label  class="radio-option"><input type="radio" name="question15" value="6"> 6</label>
+                    <label  class="radio-option"><input type="radio" name="question15" value="7"> 7</label>
+                </div>
+            </div>
+            
+            <button id="send" type="submit">Enviar</button>
+        </form>
+
+        <script type="module" src="script.js"></script>
+
+    </body>
+</html>

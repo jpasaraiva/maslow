@@ -1,0 +1,119 @@
+body {
+    background-color: #388FD6;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+h1 {
+    align-content: center;
+    background-color: #2D55BA;
+    height: 4em;
+    text-align: center;
+    color: white ;
+    border: solid 2px;
+    border-color: #2D55BA;
+    border-radius: 6px;
+}
+
+h2{
+   margin: 40px;
+   margin-left: 60px;
+   margin-right: 60px;
+    font-size:medium;
+}
+form{
+    text-align: center;
+    background-color: #E7ECF3;
+    border: solid 2px;
+    border-color: #386AD6;
+    border-radius: 6px;
+    color: #2D55BA;
+}
+.question {
+    margin-top: 0px;
+    margin-bottom: 35px;
+}
+
+.identify{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+.question-label {
+    font-weight: bold;
+}
+
+.email{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+    margin-left: 1em;
+    
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+    gap: 2px;
+}
+
+input[type="text"]{
+    height: 25px;
+    width: 15em;
+    border: solid 2px;
+    border-color: #386AD6;
+    border-radius: 5px;
+    color: #2D55BA;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #386AD6;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    background-color: #2D55BA;
+    color: #E7ECF3;
+}
+ 
+input[type="radio"] {
+    border-radius: 20px;
+    color: #2D55BA;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1px;
+}
+  
+input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);  
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
